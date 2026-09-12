@@ -1,35 +1,41 @@
-# Laboratory 2.3: Linear Regression
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/GrsVzzaf)
+![Linear Regression](docs/banner.svg)
 
+# Linear Regression
 
-In this practice, you will implement and evaluate a linear regression model in `src/lab_2_3_LinearRegression.py`. Tasks:
+Simple and multiple linear regression in NumPy, R² / RMSE / MAE evaluation, comparison with scikit-learn, and Anscombe’s quartet.
 
-1. **LinearRegressor Class**  
-   - Implement `fit_simple` and `fit_multiple`  
-   - Implement `predict`  
-2. **Evaluation**  
-   - Implement `evaluate_regression` to obtain R², RMSE, and MAE  
-   - Implement `sklearn_comparison` to compare your model with scikit-learn’s  
-   - Implement `anscombe_quartet` to test your model on Anscombe’s datasets  
-   - Implement the rest of evaluation functions.
-3. **Notebook**  
-   - In `notebook/Lab_2_3_LinearRegression.ipynb`, answer the question about your results.
+An educational implementation by **Liam Esgueva**, developed in the Machine Learning coursework at **Comillas ICAI**. This fork retains the original course scaffold, teaching material and commit attribution.
 
-## Uploading Changes to GitHub
+## Start exploring
 
-1. **Stage Changes**:
-   ```sh
-   git add .
-    ```
-2. **Commit Your Changes**:
-    ```sh
-    git commit -m "Implement kNN and evaluation functions"
-    ```
-3. **Push Your Changes**:
-    ```sh
-    git push 
-    ```
+| Entry point | What to inspect |
+| --- | --- |
+| [Implementation](src/lab_2_3_LinearRegression.py) | Model logic and evaluation helpers |
+| [Experiment notebook](notebook/Lab_2_3_LinearRegression.ipynb) | Coursework experiments and discussion |
+| [Existing tests](tests/) | The original course checks |
+| [Original assignment](docs/coursework.md) | Teaching instructions preserved separately |
 
-Once you push your changes, the tests will be automatically executed. If all tests pass, you will receive 10 points. You can try as many times as you want until all tests pass.
+## Run locally
 
-Good luck!
+```bash
+git clone https://github.com/liiiaamm/ml-linear-regression.git
+cd ml-linear-regression
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# macOS / Linux: source .venv/bin/activate
+python -m pip install numpy matplotlib seaborn scikit-learn pytest jupyter
+python -m pytest tests -q
+python -m jupyter notebook
+```
+
+Open `notebook/Lab_2_3_LinearRegression.ipynb` in Jupyter. The setup above is a starting environment; dependency compatibility and the full notebook have not been revalidated for this portfolio edition.
+
+## Scope and limitations
+
+Multiple regression uses an explicit matrix inverse and requires a nonsingular design matrix. Constant targets and degenerate inputs need additional handling. The Anscombe example downloads a Seaborn dataset on first use.
+
+This repository presents the underlying learning exercise, not a production estimator. The portfolio update improves documentation; it does not claim new model performance or a freshly passing test suite.
+
+---
+
+[Liam’s portfolio](https://github.com/liiiaamm) · [Original classroom repository](https://github.com/ICAI-IMAT-ML/p2-3-liiiaamm)
